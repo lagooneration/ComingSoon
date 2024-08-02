@@ -10,6 +10,7 @@ html,
 body
 {
     overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .webgl
@@ -63,11 +64,7 @@ body
     width: 100%;
 }
 
-#vid {
-    transform: scale(.4);
-    z-index: -2;
-    opacity: 0.1;
-}
+
 
 .title {
     opacity: 0;
@@ -78,6 +75,7 @@ body
     font-size: x-large;
     font-weight: bold;
     color: #c1dbf1;
+    letter-spacing: 2px;
     transform: scaleX(.5);
 }
 
@@ -86,7 +84,7 @@ body
 }
 
 #prompt {
-    width: 210px;
+    width: 240px;
     height: 60px;
     z-index: 20;
     font-family: "Lobster", sans-serif;
@@ -94,7 +92,8 @@ body
     font-weight: bold;
     transition: 300ms ease-in-out-out;
     position: absolute;
-    color: #c1dbf1;
+    color: #f9fcff;
+    letter-spacing: 3px;
     transform: scaleX(.5);
 }
 
@@ -394,59 +393,19 @@ body
 }
 
 
-/* HTML: <div class="loader"></div> */
-.loader {
-    width: calc(100px - 14px);
-    height: 50px;
-    border-radius: 50px;
-    background: radial-gradient(farthest-side,rgba(0, 0, 0, 0.1) calc(100% - 15px),rgba(0, 0, 0, 0.1) calc(100% - 14px) 99%,#0000) left, radial-gradient(farthest-side,#0000 calc(100% - 15px),rgba(109, 143, 186, 0.57) calc(100% - 14px) 99%,#0000) right;
-    background-size: calc(50% + 7px) 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    animation: l10-0 1s infinite linear;
-}
-
-    .loader:before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: rgb(65, 88, 208);
-        transform-origin: -14px 50%;
-        animation: l10-1 0.5s infinite linear;
-    }
-
-@keyframes l10-0 {
-    0%,49.99% {
-        transform: scaleX(1)
-    }
-
-    50%,100% {
-        transform: scaleX(-1)
-    }
-}
-
-@keyframes l10-1 {
-    100% {
-        transform: rotate(1turn)
-    }
-}
 
 
 
 .carde {
     width: 340px;
-    height: 220px;
+    height: 200px;
     background: rgb(38, 38, 38);
     box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.333);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 20px;
+    border-radius: 10px;
     gap: 10px;
     transition: 0.5s;
 }
@@ -497,38 +456,185 @@ body
     width: 330px;
     height: 182px;
     border-radius: 5px;
+    padding-top:2px;
         
 }
 
-/*______Social Media______*/
-.social-media:before {
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 2px;
-    transform: translatey(10px);
-    background: #414141;
+
+
+
+
+.cardS {
+    display: flex;
+    height: 60px;
+    width: 320px;
+    gap: 20px;
+    z-index: 400;
+    align-content:center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 100%);
+
+}
+
+    .cardS svg {
+        position: absolute;
+        display: flex;
+        width: 60%;
+        height: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        opacity: 1;
+        transition: opacity 0.25s;
+        z-index: 500;
+        padding: 0.25rem;
+        cursor: pointer;
+    }
+
+    .cardS .social-link1, .cardS .social-link2, .cardS .social-link4, .cardS .social-link5 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+        color: whitesmoke;
+        font-size: 24px;
+        text-decoration: none;
+        transition: 0.25s;
+        border-radius: 50px;
+    }
+
+    .cardS svg {
+        transform: scale(1);
+    }
+
+    .cardS .social-link1:hover {
+        background: #f09433;
+        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+        animation: bounce_613 0.4s linear;
+    }
+
+    .cardS .social-link2:hover {
+        background-color: #242c34;
+        animation: bounce_613 0.4s linear;
+    }
+
+    .cardS .social-link3:hover {
+        background-color: #5865f2;
+        animation: bounce_613 0.4s linear;
+    }
+
+    .cardS .social-link4:hover {
+        background-color: #0a66c2;
+        animation: bounce_613 0.4s linear;
+    }
+
+    .cardS .social-link5:hover {
+        background-color: #12a50b;
+        animation: bounce_613 0.4s linear;
+    }
+
+@keyframes bounce_613 {
+    40% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(0.8);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.wrapper {
+    max-width: 100%;
+    overflow: hidden;
     position: absolute;
 }
 
-.social-media a {
-    margin-right: 15px;
-    margin-top: 20px;
-    text-decoration: none;
-    color: inherit;
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+/*    text-transform: uppercase;*/
+word-spacing: 8px;
+    font-size: 20px;
+    animation: marquee 18s linear infinite;
 }
 
-    .social-media a:last-child {
-        margin-right: 0;
+    .marquee p {
+        display: inline-block;
     }
 
-    .social-media a svg {
-        color: #46b7c2;
-        transform: translatex(25px) translateY(20px);
-        width: 20px;
-        fill: currentColor;
+@keyframes marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
     }
 
-    .social-media a svg:hover {
-        color: rgb(65, 88, 208);
+    100% {
+        transform: translate3d(-50%, 0, 0);
     }
+}
+
+
+/* Core functionality */
+#animated-text-strip {
+    display: flex;
+    position: absolute;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-family: Lobster, sans-serif;
+    overflow: hidden;
+    transform: scale(3);
+    top: 45%;
+    left: -20px;
+    opacity: 0.6;
+}
+
+    #animated-text-strip .marquee2 {
+        white-space: nowrap;
+        animation: marquee2 10s linear infinite;
+        max-width: none;
+    }
+
+@keyframes marquee2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(100%, 0);
+    }
+}
+
+/* Styles for the sake of the demonstration */
+#animated-text-strip {
+    background: none;
+    padding: 1rem 0;
+}
+
+.marquee2 {
+    
+    font-size: 1.2rem;
+    font-weight: 900;
+    word-spacing: 12px;
+    color: white;
+}
+
+.dot {
+    color: #4FEBFE;
+}
